@@ -72,7 +72,7 @@ def download_audio(link):
 
 def get_transcription(link):
     audio_file = download_audio(link)
-    aai.settings.api_key = "065eedc17d59477da8004837861158eb"
+    aai.settings.api_key = ""
     
     transcriber = aai.Transcriber()
     transcript = transcriber.transcribe(audio_file)
@@ -80,7 +80,7 @@ def get_transcription(link):
     return transcript.text
 
 def generate_blog_from_transcription(transcription):
-    openai.api_key = "sk-proj-cvTLbJ72Y7nJpV16Te8xT3BlbkFJJCOeHcO0j3G6GQ44cDS4"
+    openai.api_key = ""
     
     prompt = f"Based on the following transcript from a YouTube video, write a comprehensive blog article, write it based on the transcript, but dont make it look like a youtube video, make it look like a proper blog article:\n\n{transcription}\n\nArticle:"
     
